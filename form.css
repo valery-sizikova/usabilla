@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+.row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto; }
+  .row:before, .row:after {
+    content: '';
+    display: block;
+    clear: both; }
+  .row .col-sm-1 {
+    flex-basis: 16.66%;
+    max-width: 16.66%; }
+  .row .col-sm-2 {
+    flex-basis: 33.33%;
+    max-width: 33.33%; }
+  .row .col-sm-3 {
+    flex-basis: 50%;
+    max-width: 50%; }
+  .row .col-sm-4 {
+    flex-basis: 66.66%;
+    max-width: 66.66%; }
+  .row .col-sm-5 {
+    flex-basis: 83.33%;
+    max-width: 83.33%; }
+  .row .col-sm-6 {
+    flex-basis: 100%;
+    max-width: 100%; }
+  @media (min-width: 700px) {
+    .row .col-md-1 {
+      flex-basis: 16.66%;
+      max-width: 16.66%; }
+    .row .col-md-2 {
+      flex-basis: 33.33%;
+      max-width: 33.33%; }
+    .row .col-md-3 {
+      flex-basis: 50%;
+      max-width: 50%; }
+    .row .col-md-4 {
+      flex-basis: 66.66%;
+      max-width: 66.66%; }
+    .row .col-md-5 {
+      flex-basis: 83.33%;
+      max-width: 83.33%; }
+    .row .col-md-6 {
+      flex-basis: 100%;
+      max-width: 100%; } }
+  @media (min-width: 950px) {
+    .row .col-lg-1 {
+      flex-basis: 16.66%;
+      max-width: 16.66%; }
+    .row .col-lg-2 {
+      flex-basis: 33.33%;
+      max-width: 33.33%; }
+    .row .col-lg-3 {
+      flex-basis: 50%;
+      max-width: 50%; }
+    .row .col-lg-4 {
+      flex-basis: 66.66%;
+      max-width: 66.66%; }
+    .row .col-lg-5 {
+      flex-basis: 83.33%;
+      max-width: 83.33%; }
+    .row .col-lg-6 {
+      flex-basis: 100%;
+      max-width: 100%; } }
+
+[class*='col-'] {
+  float: left;
+  padding-right: 10px; }
+  .row [class*='col-']:last-of-type {
+    padding-right: 0; }
+
+html {
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: Roboto, sans-serif; }
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(src/fonts/raleway/Raleway-Thin.ttf); }
+@font-face {
+  font-family: 'Raleway Bold';
+  src: url(src/fonts/raleway/Raleway-Regular.ttf); }
+body {
+  font-family: 'Raleway', sans-serif;
+  width: 100%;
+  margin: 0;
+  min-width: 300px;
+  max-width: 1200px;
+  font-size: 1.2rem;
+  color: #EAE1E3;
+  background-image: url("src/images/background-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+  body:before {
+    content: '';
+    pointer-events: none;
+    position: fixed;
+    background: rgba(65, 66, 78, 0.4);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto; }
+
+form {
+  position: relative;
+  margin: 0;
+  background-color: #41424E;
+  padding: 30px !important; }
+  @media (min-width: 700px) {
+    form {
+      margin: 50px auto;
+      border-radius: 25px; } }
+
+fieldset {
+  border: none; }
+  fieldset legend {
+    font-family: 'Raleway Bold', sans-serif;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    color: #FC5B6D; }
+  fieldset .field {
+    padding: 20px 0; }
+    fieldset .field label {
+      margin-bottom: .5rem; }
+    fieldset .field input {
+      border: none;
+      border-bottom: 1px solid #EAE1E3;
+      font-size: 1.2rem;
+      padding: .5rem;
+      color: #D4B7BE;
+      font-family: 'Raleway', sans-serif; }
+  fieldset #select-choice-label {
+    padding: 20px 0 0;
+    margin-bottom: 1rem; }
+  fieldset #select-choice {
+    font-size: 1.2rem;
+    color: #D4B7BE;
+    font-family: 'Raleway', sans-serif;
+    width: 50%;
+    height: 2rem;
+    background-color: #41424E;
+    outline: none; }
+
+.personal-details, .feedback, .car-preference {
+  margin: 0 0 2rem; }
+  @media (min-width: 700px) {
+    .personal-details, .feedback, .car-preference {
+      width: 45%; } }
+  .personal-details label, .personal-details input, .personal-details textarea, .feedback label, .feedback input, .feedback textarea, .car-preference label, .car-preference input, .car-preference textarea {
+    display: block;
+    width: 100%;
+    margin: 0;
+    background-color: #41424E;
+    outline: none; }
+
+.car-preference, .feedback {
+  display: inline-block; }
+  .car-preference input[type="radio"], .feedback input[type="radio"] {
+    display: none; }
+  .car-preference input[type="radio"], .car-preference label, .feedback input[type="radio"], .feedback label {
+    text-align: center;
+    width: 100%; }
+  .car-preference input[type="radio"]:checked + label, .feedback input[type="radio"]:checked + label {
+    background-color: #9D4956; }
+  .car-preference label[for="textarea"], .feedback label[for="textarea"] {
+    text-align: left; }
+
+.feedback textarea {
+  resize: none; }
+.feedback h4 {
+  text-align: center; }
+
+.radio {
+  padding: 10px !important;
+  border: 1px solid #EAE1E3; }
+
+.checkbox1, .radiobutton1 {
+  border-bottom: 0;
+  border-radius: 25px 25px 0 0; }
+  @media (min-width: 700px) {
+    .checkbox1, .radiobutton1 {
+      border-bottom: 1px solid #EAE1E3;
+      border-right: 0;
+      border-radius: 25px 0 0 25px; } }
+
+.checkbox2, .radiobutton3 {
+  border-radius: 0 0 25px 25px; }
+  @media (min-width: 700px) {
+    .checkbox2, .radiobutton3 {
+      border-radius: 0 25px 25px 0; } }
+
+.radiobutton2 {
+  border-bottom: 0; }
+  @media (min-width: 700px) {
+    .radiobutton2 {
+      border-bottom: 1px solid #EAE1E3;
+      border-right: 0; } }
+
+.submit-button {
+  margin: 1rem auto;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  background-color: #FC5B6D;
+  color: #EAE1E3;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 1.4rem;
+  font-family: 'Raleway Bold', sans-serif;
+  outline: none; }
+  .submit-button:hover {
+    outline: none;
+    background-color: #9D4956; }
+  .submit-button:active {
+    outline: none;
+    background-color: #7a3943; }
+
+@media (min-width: 700px) {
+  .feedback {
+    position: absolute;
+    top: 30px;
+    left: 52.5%;
+    padding-left: 30px; } }
+
+@media (min-width: 700px) {
+  .personal-details:before {
+    width: 1px;
+    height: 525px;
+    border-right: 1px solid #2a2a32;
+    position: absolute;
+    top: 30px;
+    left: 50%; } }
+
+textarea {
+  border: 1px solid #EAE1E3;
+  color: #D4B7BE;
+  font-size: 1.2rem;
+  font-family: 'Raleway', sans-serif;
+  padding: .5rem; }
+
+.car-preference label {
+  color: #D4B7BE; }
+
+/*# sourceMappingURL=form.css.map */
