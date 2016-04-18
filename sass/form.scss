@@ -20,7 +20,6 @@ body {
 
   &:before {
     content: '';
-    pointer-events: none;
     position: fixed;
     background: rgba(65, 66, 78, .4);
     top: 0;
@@ -140,6 +139,7 @@ fieldset {
 .radio {
   padding: 10px !important;
   border: 1px solid $grey;
+  color: $pink;
 }
 
 .checkbox1 {
@@ -166,29 +166,14 @@ fieldset {
 .radiobutton1 {
   border-bottom: 0;
   border-radius: 25px 25px 0 0;
-
-  //@include respond-to('sm') {
-  //  border-bottom: 1px solid $grey;
-  //  border-right: 0;
-  //  border-radius: 25px 0 0 25px;
-  //}
 }
 
 .radiobutton2 {
   border-bottom: 0;
-
-  //@include respond-to('sm') {
-  //  border-bottom: 1px solid $grey;
-  //  border-right: 0;
-  //}
 }
 
 .radiobutton3 {
   border-radius: 0 0 25px 25px;
-
-  //@include respond-to('sm') {
-  //  border-radius: 0 25px 25px 0;
-  //}
 }
 
 .submit-button {
@@ -244,14 +229,4 @@ textarea {
   font-size: 1.2rem;
   font-family: 'Raleway', sans-serif;
   padding: .5rem;
-}
-
-//.car-preference {
-//  label {
-//    color: $pink;
-//  }
-//}
-
-.radio {
-  color: $pink;
 }
