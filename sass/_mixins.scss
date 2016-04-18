@@ -1,0 +1,18 @@
+@mixin box-sizing($value) {
+  box-sizing: $value;
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+}
+
+$breakpoints: (
+        'sm': 700px,
+        'md': 950px,
+        'lg': 1200px
+);
+
+@mixin respond-to($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+  @media (min-width: $value) {
+    @content;
+  }
+}
