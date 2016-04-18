@@ -85,17 +85,19 @@
   .row [class*='col-']:last-of-type {
     padding-right: 0; }
 
-html {
-  font-size: 14px;
-  line-height: 1.2;
-  font-family: Roboto, sans-serif; }
-
 @font-face {
   font-family: 'Raleway';
   src: url(src/fonts/raleway/Raleway-Thin.ttf); }
 @font-face {
   font-family: 'Raleway Bold';
   src: url(src/fonts/raleway/Raleway-Regular.ttf); }
+html {
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 body {
   font-family: 'Raleway', sans-serif;
   width: 100%;
@@ -154,6 +156,7 @@ fieldset {
     padding: 20px 0 0;
     margin-bottom: 1rem; }
   fieldset #select-choice {
+    padding-left: .5rem;
     font-size: 1.2rem;
     color: #D4B7BE;
     font-family: 'Raleway', sans-serif;
@@ -195,27 +198,30 @@ fieldset {
   padding: 10px !important;
   border: 1px solid #EAE1E3; }
 
-.checkbox1, .radiobutton1 {
+.checkbox1 {
   border-bottom: 0;
   border-radius: 25px 25px 0 0; }
   @media (min-width: 700px) {
-    .checkbox1, .radiobutton1 {
+    .checkbox1 {
       border-bottom: 1px solid #EAE1E3;
       border-right: 0;
       border-radius: 25px 0 0 25px; } }
 
-.checkbox2, .radiobutton3 {
+.checkbox2 {
   border-radius: 0 0 25px 25px; }
   @media (min-width: 700px) {
-    .checkbox2, .radiobutton3 {
+    .checkbox2 {
       border-radius: 0 25px 25px 0; } }
+
+.radiobutton1 {
+  border-bottom: 0;
+  border-radius: 25px 25px 0 0; }
 
 .radiobutton2 {
   border-bottom: 0; }
-  @media (min-width: 700px) {
-    .radiobutton2 {
-      border-bottom: 1px solid #EAE1E3;
-      border-right: 0; } }
+
+.radiobutton3 {
+  border-radius: 0 0 25px 25px; }
 
 .submit-button {
   margin: 1rem auto;
@@ -259,7 +265,7 @@ textarea {
   font-family: 'Raleway', sans-serif;
   padding: .5rem; }
 
-.car-preference label {
+.radio {
   color: #D4B7BE; }
 
 /*# sourceMappingURL=form.css.map */
