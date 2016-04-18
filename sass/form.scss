@@ -11,9 +11,12 @@ body {
   max-width: 1200px;
   font-size: 1.2rem;
   color: $grey;
-  background-image: url("src/images/background-image.jpg");
-  background-repeat: no-repeat;
+  background: url("src/images/background-image-mobile.jpeg") no-repeat center center fixed;
   background-size: cover;
+
+  @include respond-to('sm') {
+    background-image: url("src/images/background-image.jpeg");
+  }
 
   &:before {
     content: '';
