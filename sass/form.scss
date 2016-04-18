@@ -1,2 +1,231 @@
-@import "mixins";
-@import "colors";
+@import "_mixins";
+@import "_grid";
+@import "_typography";
+@import "_colors";
+
+body {
+  font-family: 'Raleway', sans-serif;
+  width: 100%;
+  margin: 0;
+  min-width: 300px;
+  max-width: 1200px;
+  font-size: 1.2rem;
+  color: $grey;
+  background-image: url("src/images/background-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:before {
+    content: '';
+    pointer-events: none;
+    position: fixed;
+    background: rgba(65, 66, 78, .4);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+  }
+}
+
+form {
+  position: relative;
+  margin: 0;
+  background-color: $black;
+  padding: 30px !important;
+
+  @include respond-to('sm') {
+    margin: 50px auto;
+    border-radius: 25px;
+  }
+}
+
+fieldset {
+  border: none;
+
+  legend {
+    font-family: 'Raleway Bold', sans-serif;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    color: $coral;
+  }
+
+  .field {
+    padding: 20px 0;
+
+    label {
+      margin-bottom: .5rem;
+    }
+
+    input {
+      border: none;
+      border-bottom: 1px solid $grey;
+      font-size: 1.2rem;
+      padding: .5rem;
+      color: $pink;
+      font-family: 'Raleway', sans-serif;
+    }
+  }
+
+  #select-choice-label {
+    padding: 20px 0 0;
+    margin-bottom: 1rem;
+  }
+
+  #select-choice {
+    font-size: 1.2rem;
+    color: $pink;
+    font-family: 'Raleway', sans-serif;
+    width: 50%;
+    height: 2rem;
+    background-color: $black;
+    outline: none;
+  }
+}
+
+.personal-details, .feedback, .car-preference {
+  margin: 0 0 2rem;
+
+  @include respond-to('sm') {
+    width: 45%;
+  }
+
+  label, input, textarea {
+    display: block;
+    width: 100%;
+    margin: 0;
+    background-color: $black;
+    outline: none;
+  }
+}
+
+.car-preference, .feedback {
+  display: inline-block;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"], label {
+    text-align: center;
+    width: 100%;
+  }
+
+  input[type="radio"]:checked + label {
+    background-color: $bordo;
+  }
+
+  label[for="textarea"] {
+    text-align: left;
+  }
+}
+
+.feedback {
+
+  textarea {
+    resize: none;
+  }
+
+  h4 {
+    text-align: center;
+  }
+}
+
+.radio {
+  padding: 10px !important;
+  border: 1px solid $grey;
+}
+
+.checkbox1, .radiobutton1 {
+
+  border-bottom: 0;
+  border-radius: 25px 25px 0 0;
+
+  @include respond-to('sm') {
+    border-bottom: 1px solid $grey;
+    border-right: 0;
+    border-radius: 25px 0 0 25px;
+  }
+}
+
+.checkbox2, .radiobutton3 {
+
+  border-radius: 0 0 25px 25px;
+
+  @include respond-to('sm') {
+    border-radius: 0 25px 25px 0;
+  }
+}
+
+.radiobutton2 {
+
+  border-bottom: 0;
+
+  @include respond-to('sm') {
+    border-bottom: 1px solid $grey;
+    border-right: 0;
+  }
+}
+
+.submit-button {
+  margin: 1rem auto;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  background-color: $coral;
+  color: $grey;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 1.4rem;
+  font-family: 'Raleway Bold', sans-serif;
+  outline: none;
+
+  &:hover {
+    outline: none;
+    background-color: $bordo;
+  }
+
+  &:active {
+    outline: none;
+    background-color: darken($bordo, 10);
+  }
+}
+
+.feedback {
+
+  @include respond-to('sm') {
+    position: absolute;
+    top: 30px;
+    left: 52.5%;
+    padding-left: 30px;
+  }
+}
+.personal-details {
+
+  @include respond-to('sm') {
+    &:before {
+      width: 1px;
+      height: 525px;
+      border-right: 1px solid darken($black, 10);
+      position: absolute;
+      top: 30px;
+      left: 50%;
+    }
+  }
+}
+
+textarea {
+  border: 1px solid $grey;
+  color: $pink;
+  font-size: 1.2rem;
+  font-family: 'Raleway', sans-serif;
+  padding: .5rem;
+}
+
+.car-preference {
+  label {
+    color: $pink;
+  }
+}
