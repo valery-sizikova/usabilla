@@ -104,9 +104,11 @@ body {
   max-width: 1200px;
   font-size: 1.2rem;
   color: #EAE1E3;
-  background-image: url("src/images/background-image.jpg");
-  background-repeat: no-repeat;
+  background: url("src/images/background-image-mobile.jpeg") no-repeat center center fixed;
   background-size: cover; }
+  @media (min-width: 700px) {
+    body {
+      background-image: url("src/images/background-image.jpeg"); } }
   body:before {
     content: '';
     pointer-events: none;
