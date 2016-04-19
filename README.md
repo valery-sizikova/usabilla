@@ -11,6 +11,7 @@ Here are some of my notes regarding the test assignment.
 
 - Clone Usabilla project
 - Navigate to Usabilla project directory in your Terminal
+- Navigate to sass directory
 - Execute the folowing:
 ```
 sass form.scss ../form.css
