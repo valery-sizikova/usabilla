@@ -38,11 +38,11 @@
     <fieldset class="car-preference row">
         <legend>Which do you like?</legend>
 
-        <label for="checkbox1" class="radio">Mercedes</label>
-        <input type="radio" name="likes" id="checkbox1" value="checkbox1" class="">
+        <input type="radio" name="likes" id="checkbox1" value="checkbox1">
+        <label for="checkbox1" class="col-md-3 checkbox1 radio">Mercedes</label>
 
-        <label for="checkbox2" class="radio">Audi</label>
-        <input type="radio" name="likes" id="checkbox2" value="checkbox2" class="">
+        <input type="radio" name="likes" id="checkbox2" value="checkbox2">
+        <label for="checkbox2" class="col-md-3 checkbox2 radio">Audi</label>
 
     </fieldset>
 
@@ -56,13 +56,15 @@
 
         <h4>How does our product make you feel?</h4>
 
-        <div class="col-sm-4 feedback-radio">
-            <label for="radiobutton1" class="radio icons icon-amazing amazing">Amazing</label>
-            <input type="radio" name="happiness" id="radiobutton1" class=""/>
-            <label for="radiobutton2" class="radio icons icon-happy amazing">Happy</label>
-            <input type="radio" name="happiness" id="radiobutton2" class=""/>
-            <label for="radiobutton3" class="radio icons icon-sad amazing">Sad</label>
-            <input type="radio" name="happiness" id="radiobutton3" class=""/>
+        <div class="feedback-radio">
+            <input type="radio" name="happiness" id="radiobutton1"/>
+            <label for="radiobutton1" class="radiobutton1 radio">Amazing</label>
+
+            <input type="radio" name="happiness" id="radiobutton2"/>
+            <label for="radiobutton2" class="radiobutton2 radio">Happy</label>
+
+            <input type="radio" name="happiness" id="radiobutton3"/>
+            <label for="radiobutton3" class="radiobutton3 radio">Sad</label>
         </div>
     </fieldset>
 
