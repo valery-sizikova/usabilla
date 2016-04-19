@@ -1,14 +1,15 @@
 @import "_mixins";
+@import "_sprite";
 @import "_grid";
 @import "_typography";
 @import "_colors";
 
 body {
-  font-family: 'Raleway', sans-serif;
   width: 100%;
-  margin: 0;
   min-width: 300px;
   max-width: 1200px;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
   font-size: 1.2rem;
   color: $grey;
   background: url("src/images/background-image-mobile.jpeg") no-repeat center center fixed;
@@ -20,7 +21,6 @@ body {
 
   &:before {
     content: '';
-    pointer-events: none;
     position: fixed;
     background: rgba(65, 66, 78, .4);
     top: 0;
@@ -43,10 +43,19 @@ form {
     margin: 50px auto;
     border-radius: 25px;
   }
+
+  label {
+    font-size: .9rem;
+  }
 }
 
-fieldset {
+.personal-details, .car-preference, .feedback {
   border: none;
+  margin: 0 0 2rem;
+
+  @include respond-to('sm') {
+    width: 45%;
+  }
 
   legend {
     font-family: 'Raleway Bold', sans-serif;
@@ -55,20 +64,28 @@ fieldset {
     color: $coral;
   }
 
+  label, input, textarea {
+    display: block;
+    width: 100%;
+    margin: 0;
+    background-color: $black;
+    outline: none;
+  }
+
   .field {
     padding: 20px 0;
 
     label {
-      margin-bottom: .5rem;
+      background-color: transparent;
     }
 
     input {
       border: none;
       border-bottom: 1px solid $grey;
-      font-size: 1.2rem;
       padding: .5rem;
-      color: $pink;
       font-family: 'Raleway', sans-serif;
+      font-size: 1.2rem;
+      color: $pink;
     }
   }
 
@@ -89,106 +106,78 @@ fieldset {
   }
 }
 
-.personal-details, .feedback, .car-preference {
-  margin: 0 0 2rem;
+.personal-details {
 
   @include respond-to('sm') {
-    width: 45%;
-  }
-
-  label, input, textarea {
-    display: block;
-    width: 100%;
-    margin: 0;
-    background-color: $black;
-    outline: none;
+    &:before {
+      width: 1px;
+      height: 540px;
+      border-right: 1px solid darken($black, 10);
+      position: absolute;
+      top: 30px;
+      left: 50%;
+    }
   }
 }
 
-.car-preference, .feedback {
-  display: inline-block;
+.car-preference {
 
-  input[type="radio"] {
-    display: none;
+  .radio {
+    font-size: 1.2rem;
+    padding: 10px 10px 10px 30px !important;
   }
 
-  input[type="radio"], label {
-    text-align: center;
-    width: 100%;
-  }
-
-  input[type="radio"]:checked + label {
-    background-color: $bordo;
-  }
-
-  label[for="textarea"] {
-    text-align: left;
+  input[type='radio'] {
+    margin-top: -27px;
+    z-index: 1;
   }
 }
 
 .feedback {
 
+  @include respond-to('sm') {
+    position: absolute;
+    top: 30px;
+    left: 52.5%;
+    padding-left: 30px;
+  }
+
+  label {
+    padding-bottom: .5rem;
+  }
+
   textarea {
     resize: none;
+    border: 1px solid $grey;
+    color: $pink;
+    font-size: 1.2rem;
+    font-family: 'Raleway', sans-serif;
+    padding: .5rem;
   }
 
   h4 {
+    color: $coral;
+    font-family: 'Raleway Bold', sans-serif;
     text-align: center;
+    font-weight: 100;
   }
-}
 
-.radio {
-  padding: 10px !important;
-  border: 1px solid $grey;
-}
+  .feedback-radio {
+    margin-left: 30px;
 
-.checkbox1 {
+    .radio {
+      font-size: 1.2rem;
+      padding: 6px 6px 6px 40px !important;
+      margin-top: 1.2rem !important;
+      margin-bottom: 1.6rem !important;
+    }
 
-  border-bottom: 0;
-  border-radius: 25px 25px 0 0;
-
-  @include respond-to('sm') {
-    border-bottom: 1px solid $grey;
-    border-right: 0;
-    border-radius: 25px 0 0 25px;
+    input[type='radio'] {
+      margin-top: -37px;
+      margin-left: -35px;
+      z-index: 1;
+    }
   }
-}
-
-.checkbox2 {
-
-  border-radius: 0 0 25px 25px;
-
-  @include respond-to('sm') {
-    border-radius: 0 25px 25px 0;
-  }
-}
-
-.radiobutton1 {
-  border-bottom: 0;
-  border-radius: 25px 25px 0 0;
-
-  //@include respond-to('sm') {
-  //  border-bottom: 1px solid $grey;
-  //  border-right: 0;
-  //  border-radius: 25px 0 0 25px;
-  //}
-}
-
-.radiobutton2 {
-  border-bottom: 0;
-
-  //@include respond-to('sm') {
-  //  border-bottom: 1px solid $grey;
-  //  border-right: 0;
-  //}
-}
-
-.radiobutton3 {
-  border-radius: 0 0 25px 25px;
-
-  //@include respond-to('sm') {
-  //  border-radius: 0 25px 25px 0;
-  //}
 }
 
 .submit-button {
@@ -213,45 +202,10 @@ fieldset {
     outline: none;
     background-color: darken($bordo, 10);
   }
-}
 
-.feedback {
-
-  @include respond-to('sm') {
-    position: absolute;
-    top: 30px;
-    left: 52.5%;
-    padding-left: 30px;
-  }
-}
-.personal-details {
-
-  @include respond-to('sm') {
-    &:before {
-      width: 1px;
-      height: 525px;
-      border-right: 1px solid darken($black, 10);
-      position: absolute;
-      top: 30px;
-      left: 50%;
-    }
+  .icon-click {
+    margin-top: -28px;
+    margin-left: calc(50% + 3.5rem);
   }
 }
 
-textarea {
-  border: 1px solid $grey;
-  color: $pink;
-  font-size: 1.2rem;
-  font-family: 'Raleway', sans-serif;
-  padding: .5rem;
-}
-
-//.car-preference {
-//  label {
-//    color: $pink;
-//  }
-//}
-
-.radio {
-  color: $pink;
-}

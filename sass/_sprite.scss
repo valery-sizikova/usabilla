@@ -1,0 +1,27 @@
+@mixin sprite($x, $y, $width, $height) {
+  background-position: $x $y;
+  width: $width;
+  height: $height;
+}
+
+.icons {
+  background-image: url('src/images/sprite.png');
+  background-repeat: no-repeat;
+  display: block;
+
+  &.icon-amazing {
+    @include sprite(-5px, -5px, 25px, 25px);
+  }
+
+  &.icon-click {
+    @include sprite(-5px, -40px, 22px, 30px);
+  }
+
+  &.icon-happy {
+    @include sprite(-5px, -80px, 25px, 25px);
+  }
+
+  &.icon-sad {
+    @include sprite(-5px, -115px, 25px, 25px);
+  }
+}
