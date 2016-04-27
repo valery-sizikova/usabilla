@@ -2,7 +2,7 @@
 
 Here are some of my notes regarding the test assignment.
 
-*Please note that I had to change the HTML file for both versions to make the design responsible. I added meta tag:*
+*Please note that I had to change the HTML file for both versions to make the design responsive. I added meta tag:*
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
